@@ -16,6 +16,7 @@ public class PostmanEchoClient {
             peGetWithParameter(client);
             peMyIP(client);
             pePost(client);
+            peGetUtcTime(client);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
             ex.printStackTrace();
@@ -61,6 +62,17 @@ public class PostmanEchoClient {
         printResult("peMyIP", response);
     }
 
+    void peGetUtcTime(HttpClient client) throws URISyntaxException, IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri( new URI("https://postman-echo.com/time/now") )
+                .GET()
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        printResult("peGetUtcTime", response);
+    }
+
      void pePost(HttpClient client) throws URISyntaxException, IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri( new URI("https://postman-echo.com/post") )
@@ -73,5 +85,11 @@ public class PostmanEchoClient {
 
         printResult("pePost", response);
      }
+
+     /*
+
+     git reset --hard HEAD
+
+      */
 
 }
