@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="MemKV">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../libs/MemKV/MemKV.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../libs/JUnit5" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../libs/JUnit5" recursive="false" />
+  </library>
+</component>
